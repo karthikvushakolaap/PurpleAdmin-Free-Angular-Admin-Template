@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd } from '@angular/router';
+import { Spinkit } from 'ng-http-loader';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit{
   showNavbar: boolean = true;
   showFooter: boolean = true;
   isLoading: boolean;
+
+  spinnerStyle = Spinkit;
 
   constructor(private router: Router) {
     
