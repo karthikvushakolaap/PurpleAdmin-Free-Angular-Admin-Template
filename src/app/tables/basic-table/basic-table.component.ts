@@ -11,9 +11,14 @@ import { Router } from '@angular/router';
 export class BasicTableComponent implements OnInit {
 
   employees: any;
+  // collection = [];
+  p: number;
 
   constructor(private employeeService: EmployeeService, private alertCtrl: AlertController, private route: Router) {
     this.getEmployees();
+    // for(let i=1; i<=100; i++) {
+    //   this.collection.push(`Angular ${i}.0`)
+    // }
   }
 
   ngOnInit() {

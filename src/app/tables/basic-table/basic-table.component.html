@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employee of employees">
+              <tr *ngFor="let employee of employees | paginate: {itemsPerPage:10, currentPage: p}">
                 <td class="py-1"><img src="assets/images/faces/face1.jpg" alt="image"/></td>
                 <td data-th="E_ID" class="ng-binding"><strong class="ng-binding"><a href="#">{{ employee.id }}</a></strong></td>
                 <td data-th="Name" class="ng-binding"> {{ employee.name }} </td>
@@ -59,6 +59,13 @@
             </tbody>
           </table>
         </div>
+      
+        <!-- <ul>
+          <li *ngFor="let item of employees | paginate: {itemsPerPage:5, currentPage: p}">{{item}}</li>
+        </ul> -->
+        <br/>
+        <pagination-controls (pageChange)="p =$event" class="ng-pagination"></pagination-controls>
+
       </div>
     </div>
   </div>
